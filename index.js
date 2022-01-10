@@ -17,20 +17,6 @@
 
 // Once finished building team > exit the application > HTML is generated 
 
-// EXAMPLE DIRECTORY
-// .
-// ├── __tests__/             //jest tests
-// │   ├── Employee.test.js
-// │   ├── Engineer.test.js
-// │   ├── Intern.test.js
-// │   └── Manager.test.js
-// ├── dist/                  // rendered output (HTML) and CSS style sheet      
-// ├── lib/                   // classes
-// ├── src/                   // template helper code 
-// ├── .gitignore             // indicates which folders and files Git should ignore
-// ├── index.js               // runs the application
-// └── package.json    
-
 // The application must include Employee, Manager, Engineer, and Intern classes. The tests for these classes (in the _tests_ directory) must ALL pass.
 // The first class is an Employee parent class with the following properties and methods:
 // name, id, email, 
