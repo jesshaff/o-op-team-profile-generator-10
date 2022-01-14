@@ -82,6 +82,94 @@ const addManager = () => {
         console.log(manager);
     }) 
 };
+
+// Add employee prompt
+const addEmployee = () => {
+    console.log(`>>>Adding employees to the team<<<`);
+
+    return inquirer.prompt ([
+        {
+            type: 'list',
+            name: 'role',
+            message: "Please choose your employees role",
+            choices: ['Engineer', 'Intern']
+        },
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the employee?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the employees name.');
+                    return false;
+                }
+        },
+        {
+            type: 'input',
+            name: 'employeeId',
+            message: 'What is employees ID?',
+            validate: nameInput => {
+                if (isNaN(nameInput)) {
+                    console.log('Please enter the employees ID.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter the employees email.',
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                if (valid) {
+                    return true;
+                } else {
+                    console.log('Please enter the employees email.');
+                    return false;
+                }
+            }   
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please enter the employees github username.',
+            when: (input) => input.role === 'Engineer',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the employees github username.")
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Please enter the interns school.',
+            when: (input) => input.role === 'Intern',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the interns school.")
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAddEmployee',
+            message: 'Would you like to add more team members?',
+            default: false
+        }   
+    ])
+}
+
 //  When I click email address in HTML, email opens and populated TOL field with email address
 
 // When i click GitHub username, GitHub profile opens in a new tab
