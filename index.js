@@ -168,7 +168,32 @@ const addEmployee = () => {
             default: false
         }   
     ])
-}
+    .then(employeeData => {
+        // data for employee types
+
+        let { name, employeeId, role, github, school, confirmAddEmployee } = employeeData;
+        let employee;
+
+        if (role === 'Engineer') {
+            employee = new Engineer (name, employeeId, email, github);
+
+            console.log(employee);
+
+        } else if (role === 'Intern') {
+            employee = new Intern (name, employeeId, email, school);
+
+            console,log(employee);
+        }
+
+        teamArray.push(employee);
+
+        if (confirmAddEmployee) {
+            return addEmployee(teamArray);
+        } else {
+            return teamArray;
+        }
+    })
+};
 
 //  When I click email address in HTML, email opens and populated TOL field with email address
 
