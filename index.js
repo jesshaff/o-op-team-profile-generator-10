@@ -5,15 +5,83 @@
 // Link to page creation
 const generateHTML = require('./src/generate-html');
 
-
 // Team profiles
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
+// Node modules
+const fs = require('fs');
+const inquirer = require('inquirer');
+
 // Team array
 const teamArray = [];
 
+// Start of manager prompts
+const addManager = () => {
+    return inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Who is the manager of this team?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the managers name.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'employeeId',
+            message: 'What is the managers employee ID?',
+            validate: nameInput => {
+                if (isNaN(nameInput)) {
+                    console.log('Please enter the managers employee ID.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter the managers email.',
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                if (valid) {
+                    return true;
+                } else {
+                    console.log('Please enter the managers email.');
+                    return false;
+                }
+            }   
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is the managers office number?',
+            validate: nameInput => {
+                if (isNaN(nameInput)) {
+                    console.log('Please enter the managers office number.')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    ])
+    .then(managerInput => {
+        const { name, employeeId, email, officeNumber } = managerInput;
+        const manager = new Manager (name, employeeId, email, officeNumber);
+
+        teamArray.push(manager);
+        console.log(manager);
+    }) 
+};
 //  When I click email address in HTML, email opens and populated TOL field with email address
 
 // When i click GitHub username, GitHub profile opens in a new tab
