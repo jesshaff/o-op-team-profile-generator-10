@@ -39,7 +39,7 @@ const addManager = () => {
             message: 'What is the managers employee ID?',
             validate: nameInput => {
                 if (isNaN(nameInput)) {
-                    console.log('Please enter the managers employee ID.')
+                    console.log('Please enter the managers employee ID.');
                     return false;
                 } else {
                     return true;
@@ -66,7 +66,7 @@ const addManager = () => {
             message: 'What is the managers office number?',
             validate: nameInput => {
                 if (isNaN(nameInput)) {
-                    console.log('Please enter the managers office number.')
+                    console.log('Please enter the managers office number.');
                     return false;
                 } else {
                     return true;
@@ -112,7 +112,7 @@ const addEmployee = () => {
             message: 'What is employees ID?',
             validate: nameInput => {
                 if (isNaN(nameInput)) {
-                    console.log('Please enter the employees ID.')
+                    console.log('Please enter the employees ID.');
                     return false;
                 } else {
                     return true;
@@ -142,7 +142,7 @@ const addEmployee = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log("Please enter the employees github username.")
+                    console.log("Please enter the employees github username.");
                     return false;
                 }
             }
@@ -156,7 +156,7 @@ const addEmployee = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log("Please enter the interns school.")
+                    console.log("Please enter the interns school.");
                     return false;
                 }
             }
@@ -195,6 +195,19 @@ const addEmployee = () => {
     })
 };
 
+// Function to generate HTML page
+const writeFile = data => {
+    fs.writeFile('./dist/output-html', data, err => {
+        // If there is an error
+        if (err) {
+            console.log(err);
+            return;
+        // When the profile has been created
+        } else {
+            console.log('Your team profile has successfully been create! Please check out the index-output.html');
+        }
+    })
+}
 //  When I click email address in HTML, email opens and populated TOL field with email address
 
 // When i click GitHub username, GitHub profile opens in a new tab
