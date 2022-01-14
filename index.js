@@ -2,6 +2,17 @@
 // Team members information 
 
 // Generate an HTML file based off user input
+// Link to page creation
+const generateHTML = require('./src/generate-html');
+
+
+// Team profiles
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+
+// Team array
+const teamArray = [];
 
 //  When I click email address in HTML, email opens and populated TOL field with email address
 
