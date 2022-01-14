@@ -1,6 +1,3 @@
-// Accept user input for the following:
-// Team members information 
-
 // Generate an HTML file based off user input
 // Link to page creation
 const generateHTML = require('./src/generate-html');
@@ -105,6 +102,7 @@ const addEmployee = () => {
                     console.log('Please enter the employees name.');
                     return false;
                 }
+            }
         },
         {
             type: 'input',
@@ -195,7 +193,7 @@ const addEmployee = () => {
     })
 };
 
-// Function to generate HTML page
+// Function to generate HTML file
 const writeFile = data => {
     fs.writeFile('./dist/output-html', data, err => {
         // If there is an error
