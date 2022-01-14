@@ -60,3 +60,42 @@ const generateIntern = function(intern) {
 </div>
     `
 }
+
+// Push array to page
+generateHTML = (data) => {
+    // Array for card
+    pageArray = [];
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole();
+
+        // Call manager function
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            pageArray.push(managerCard);
+        }
+
+        // Call engineer function
+        if (role === 'engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            pageArray.push(engineerCard);
+        }
+
+        // Call intern function
+        if (role === 'intern') {
+            const internCard = generateIntern(employee);
+
+            pageArray.push(internCard);
+        }
+    }
+
+    // Joining strings 
+    const employeeCards = pageArray.join('')
+
+    // Return to generated page
+    const generateTeam = generateTeamPage(employeeCards);
+    return generateTeam;
+}
