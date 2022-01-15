@@ -169,7 +169,7 @@ const addEmployee = () => {
     .then(employeeData => {
         // data for employee types
 
-        let { name, employeeId, role, github, school, confirmAddEmployee } = employeeData;
+        let { name, employeeId, email, role, github, school, confirmAddEmployee } = employeeData;
         let employee;
 
         if (role === 'Engineer') {
@@ -180,7 +180,7 @@ const addEmployee = () => {
         } else if (role === 'Intern') {
             employee = new Intern (name, employeeId, email, school);
 
-            console,log(employee);
+            console.log(employee);
         }
 
         teamArray.push(employee);
@@ -195,17 +195,30 @@ const addEmployee = () => {
 
 // Function to generate HTML file
 const writeFile = data => {
-    fs.writeFile('./dist/output-html', data, err => {
+    fs.writeFile('./dist/output-index.html', data, err => {
         // If there is an error
         if (err) {
             console.log(err);
             return;
         // When the profile has been created
         } else {
-            console.log('Your team profile has successfully been create! Please check out the index-output.html');
+            console.log('Your team profile has successfully been create! Please check out the output-index.html');
         }
     })
-}
+};
+
+addManager()
+    .then(addEmployee)
+    .then(teamArray => { 
+        return generateHTML(teamArray);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
 //  When I click email address in HTML, email opens and populated TOL field with email address
 
 // When i click GitHub username, GitHub profile opens in a new tab
