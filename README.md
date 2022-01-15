@@ -22,7 +22,11 @@ npm install
 
 ## Usage
 Use Inquirier from your command line to answer questions about your project. View the walthrough video below:
+<br>
+
 [Running Tests](assets/videos/team-profile-generator-test-walkthrough.webm)
+<br>
+
 [Video Demonstration](assets/videos/team-profile-generator-app-walkthrough.webm)
 
 ## Contributing
