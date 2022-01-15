@@ -1,5 +1,6 @@
-// Using intern constructor
 const { TestWatcher } = require('@jest/core');
+
+// Using intern constructor
 const Intern = require('../lib/intern');
 
 // creating intern object

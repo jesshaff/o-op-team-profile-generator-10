@@ -1,5 +1,6 @@
-// Using manager constructor
 const { TestWatcher } = require('@jest/core');
+
+// Using manager constructor
 const Manager = require('../lib/manager');
 
 // Creating manager object

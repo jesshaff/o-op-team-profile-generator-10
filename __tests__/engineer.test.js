@@ -1,5 +1,6 @@
-// Using employee constructor
 const { TestWatcher } = require('@jest/core');
+
+// Using employee constructor
 const Engineer = require('../lib/engineer');
 
 // Creates engineer object
