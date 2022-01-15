@@ -4,7 +4,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-This application was created to generate a team profile based on user input using the Inquirer module from Node.js and displaying the information on a newly created html page with a style sheet, demostrating the use of OOP using jest.
+This application was created to generate a team profile based on user input using the Inquirer module from Node.js and displaying the information on a newly created html page with a style sheet, demonstrating the use of OOP using jest.
 
 ## Table of Contents
 * [Installation](#Installation)
@@ -22,7 +22,8 @@ npm install
 
 ## Usage
 Use Inquirier from your command line to answer questions about your project. View the walthrough video below:
-[Video Demonstration](assets/videos/team-profile-generator-walkthrough.webm)
+[Running Tests](assets/videos/team-profile-generator-test-walkthrough.webm)
+[Video Demonstration](assets/videos/team-profile-generator-app-walkthrough.webm)
 
 ## Contributing
 No contributions are needed at this time.
