@@ -218,6 +218,3 @@ addManager()
     .catch(err => {
         console.log(err);
     });
-
-
-// When i click GitHub username, GitHub profile opens in a new tab
