@@ -1,7 +1,7 @@
 // Create manager card
 const generateManager = function(manager) {
     return `
-    <div> class="col-4 mt-4">
+    <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
@@ -22,7 +22,7 @@ const generateManager = function(manager) {
 // Create engineer card
 const generateEngineer = function(engineer) {
     return `
-    <div> class="col-4 mt-4">
+    <div class="col-4 mt-4">
     <div class="card h-100">
         <div class="card-header">
             <h3>${engineer.name}</h3>
@@ -43,7 +43,7 @@ const generateEngineer = function(engineer) {
 // Create intern card
 const generateIntern = function(intern) {
     return `
-    <div> class="col-4 mt-4">
+    <div class="col-4 mt-4">
     <div class="card h-100">
         <div class="card-header">
             <h3>${intern.name}</h3>
@@ -78,14 +78,14 @@ generateHTML = (data) => {
         }
 
         // Call engineer function
-        if (role === 'engineer') {
+        if (role === 'Engineer') {
             const engineerCard = generateEngineer(employee);
 
             pageArray.push(engineerCard);
         }
 
         // Call intern function
-        if (role === 'intern') {
+        if (role === 'Intern') {
             const internCard = generateIntern(employee);
 
             pageArray.push(internCard);
@@ -111,7 +111,7 @@ const generateTeamPage = function(employeeCards) {
         <title>Team Profile</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap">
-        <link rel="stylesheet" href="href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="style.css"
     </head>
